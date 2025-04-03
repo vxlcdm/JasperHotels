@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { useNavigate } from 'react-router-dom';
 import SearchIcon from "@mui/icons-material/Search";
-import { useState } from 'react';
+ 
 
 
 
@@ -33,8 +33,7 @@ function Navbar() {
                const navigate= useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   
-  const [anchorEl, setAnchorEl] = useState(null);
-  const [openMenu, setOpenMenu] = useState(null);
+ 
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -44,15 +43,8 @@ function Navbar() {
     setAnchorElNav(null);
   };
  
-  const handleMenuOpen = (event, menuName) => {
-    setAnchorEl(event.currentTarget);
-    setOpenMenu(menuName);
-  };
 
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-    setOpenMenu(null);
-  };
+ 
 
 
   return (
@@ -112,140 +104,53 @@ function Navbar() {
 
 
 
-          
 
 
-           <Box sx={{ flexGrow: 1, display: "flex", gap: "20px", marginLeft: "15%" }}>
-          {/* Home */}
-          <Box>
-            <Button
-              onClick={() => navigate("/home")}
-              onMouseEnter={(e) => handleMenuOpen(e, "home")}
-              sx={{ color: "white" }}
-            >
-              Home
-            </Button>
-            <Menu
-              anchorEl={anchorEl}
-              open={openMenu === "home"}
-              onClose={handleMenuClose}
-              MenuListProps={{
-                onMouseEnter: () => setOpenMenu("home"),
-                onMouseLeave: handleMenuClose,
-              }}
-              sx={{ mt: 3 }}
-            >
-              <MenuItem onClick={handleMenuClose}>Introduction</MenuItem>
-              <MenuItem onClick={handleMenuClose}>Updates</MenuItem>
-              <MenuItem onClick={handleMenuClose}>Featured Posts</MenuItem>
-            </Menu>
-          </Box>
 
-          {/* Accommodation */}
-          <Box>
-            <Button
-              onMouseEnter={(e) => handleMenuOpen(e, "accommodation")}
-              onClick={() => navigate("/accommodation")}
-              sx={{ color: "white" }}
-            >
-              Accommodation
-            </Button>
-            <Menu
-              anchorEl={anchorEl}
-              open={openMenu === "accommodation"}
-              onClose={handleMenuClose}
-              MenuListProps={{
-                onMouseEnter: () => setOpenMenu("accommodation"),
-                onMouseLeave: handleMenuClose,
-              }}
-              sx={{ mt: 3 }}
-            >
-              <MenuItem onClick={handleMenuClose}>Hotels</MenuItem>
-              <MenuItem onClick={handleMenuClose}>Resorts</MenuItem>
-              <MenuItem onClick={handleMenuClose}>Hostels</MenuItem>
-            </Menu>
-          </Box>
 
-          {/* Templates */}
-          <Box>
-            <Button
-              onMouseEnter={(e) => handleMenuOpen(e, "templates")}
-              onClick={() => navigate("/templates")}
-              sx={{ color: "white" }}
-            >
-              Templates
-            </Button>
-            <Menu
-              anchorEl={anchorEl}
-              open={openMenu === "templates"}
-              onClose={handleMenuClose}
-              MenuListProps={{
-                onMouseEnter: () => setOpenMenu("templates"),
-                onMouseLeave: handleMenuClose,
-              }}
-              sx={{ mt: 3 }}
-            >
-              <MenuItem onClick={handleMenuClose}>Business</MenuItem>
-              <MenuItem onClick={handleMenuClose}>Portfolio</MenuItem>
-              <MenuItem onClick={handleMenuClose}>E-commerce</MenuItem>
-            </Menu>
-          </Box>
 
-          {/* Sections */}
-          <Box>
-            <Button
-              onMouseEnter={(e) => handleMenuOpen(e, "sections")}
-              onClick={() => navigate("/sections")}
-              sx={{ color: "white" }}
-            >
-              Sections
-            </Button>
-            <Menu
-              anchorEl={anchorEl}
-              open={openMenu === "sections"}
-              onClose={handleMenuClose}
-              MenuListProps={{
-                onMouseEnter: () => setOpenMenu("sections"),
-                onMouseLeave: handleMenuClose,
-              }}
-              sx={{ mt: 3 }}
-            >
-              <MenuItem onClick={handleMenuClose}>Header</MenuItem>
-              <MenuItem onClick={handleMenuClose}>Footer</MenuItem>
-              <MenuItem onClick={handleMenuClose}>Sidebar</MenuItem>
-            </Menu>
-          </Box>
-
-          {/* Mega Menu */}
-          <Box>
-            <Button
-              onMouseEnter={(e) => handleMenuOpen(e, "mega-menu")}
-              onClick={() => navigate("/mega-menu")}
-              sx={{ color: "white" }}
-            >
-              Mega Menu
-            </Button>
-            <Menu
-              anchorEl={anchorEl}
-              open={openMenu === "mega-menu"}
-              onClose={handleMenuClose}
-              MenuListProps={{
-                onMouseEnter: () => setOpenMenu("mega-menu"),
-                onMouseLeave: handleMenuClose,
-              }}
-              sx={{ mt: 3 }}
-            >
-              <MenuItem onClick={handleMenuClose}>Trending</MenuItem>
-              <MenuItem onClick={handleMenuClose}>Popular</MenuItem>
-              <MenuItem onClick={handleMenuClose}>New Releases</MenuItem>
-            </Menu>
-          </Box>
-
-          {/* Search Icon */}
+   <Box sx={{ flexGrow: 1, display: "flex", gap: "20px", marginLeft: "15%" }}>
+          <Button onClick={() => navigate("/")} sx={{ color: "white" }}>
+            Home
+          </Button>
+          <Button onClick={() => navigate("/accommodation")} sx={{ color: "white" }}>
+            Accommodation
+          </Button>
+          <Button onClick={() => navigate("/templates")} sx={{ color: "white" }}>
+            Templates
+          </Button>
+          <Button onClick={() => navigate("/sections")} sx={{ color: "white" }}>
+            Sections
+          </Button>
+          <Button onClick={() => navigate()} sx={{ color: "white" }}>
+            Mega Menu
+          </Button>
           <IconButton sx={{ color: "white" }}>
             <SearchIcon />
           </IconButton>
         </Box>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+
+           
 
 
 
