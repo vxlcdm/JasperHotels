@@ -16,7 +16,7 @@ const PublicRoutes = () => {
       <Routes>
         <Route path='/' element={<PublicLayout/>}>
                 <Route index element ={<Home/>}/>
-                <Route path='/accomodation' element={<Accommodation/>}/>
+                <Route path='/accommodation' element={<Accommodation/>}/>
                 <Route path='/templates' element={<Templates/>}/>
                 <Route path='/sections' element={<Sections/>}/>
         </Route>
