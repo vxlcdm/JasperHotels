@@ -27,10 +27,10 @@ import { useState } from 'react';
 
 
 const pages = ["Home", "Accommodation", "Templates", "Sections", "Mega Menu"];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+
 
 function Navbar() {
-               const Nav= useNavigate();
+               const navigate= useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   
   const [anchorEl, setAnchorEl] = useState(null);
@@ -39,19 +39,11 @@ function Navbar() {
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
+ 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-  const handleNavigate = (page) => {
-    Nav(page.path); 
-  };
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+ 
   const handleMenuOpen = (event, menuName) => {
     setAnchorEl(event.currentTarget);
     setOpenMenu(menuName);
