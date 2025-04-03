@@ -48,7 +48,7 @@ function Navbar() {
 
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{background:"white" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
            
@@ -69,7 +69,7 @@ function Navbar() {
               onClick={handleOpenNavMenu}
               color="inherit"
             >
-              <MenuIcon />
+              <MenuIcon sx={{color:"black"}}/>
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -109,23 +109,23 @@ function Navbar() {
 
 
 
-   <Box sx={{ flexGrow: 1, display: "flex", gap: "20px", marginLeft: "15%" }}>
-          <Button onClick={() => navigate("/")} sx={{ color: "white" }}>
+   <Box sx={{ flexGrow: 1, display: {  xs:'none', lg: "flex"     }, gap: "20px", marginLeft: "15%" , color:"black"}  }>
+          <Button onClick={() => navigate("/")} sx={{ color: "black" }}>
             Home
           </Button>
-          <Button onClick={() => navigate("/accommodation")} sx={{ color: "white" }}>
+          <Button onClick={() => navigate("/accommodation")} sx={{ color: "black" }}>
             Accommodation
           </Button>
-          <Button onClick={() => navigate("/templates")} sx={{ color: "white" }}>
+          <Button onClick={() => navigate("/templates")} sx={{ color: "black" }}>
             Templates
           </Button>
-          <Button onClick={() => navigate("/sections")} sx={{ color: "white" }}>
+          <Button onClick={() => navigate("/sections")} sx={{ color: "black" }}>
             Sections
           </Button>
-          <Button onClick={() => navigate()} sx={{ color: "white" }}>
+          <Button onClick={() => navigate()} sx={{ color: "black" }}>
             Mega Menu
           </Button>
-          <IconButton sx={{ color: "white" }}>
+          <IconButton sx={{ color: "black" }}>
             <SearchIcon />
           </IconButton>
         </Box>
@@ -158,6 +158,7 @@ function Navbar() {
             <Button
              variant="contained"
                 sx={{
+                  display:{xs:"none", lg:"block"},
                   backgroundColor: "#ff4000",
                   transition: "padding-left 0.3s ease-in-out",
                   paddingX: "16px", 
