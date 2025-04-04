@@ -14,92 +14,50 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { useNavigate } from 'react-router-dom';
 import SearchIcon from "@mui/icons-material/Search";
+import { useState } from 'react';
+import CloseIcon from "@mui/icons-material/Close";;
+import { Drawer, List, ListItem, ListItemButton, ListItemText } from "@mui/material";
+
+
+
+
+
+
+
+
+
+
  
-
-
-
-
-
-
-
-
-
-
-
-const pages = ["Home", "Accommodation", "Templates", "Sections", "Mega Menu"];
 
 
 function Navbar() {
                const navigate= useNavigate();
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  
  
-
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
+ 
+ 
+  const [open, setOpen] = useState(false);
+     // Function to toggle sidebar
+  const toggleDrawer = (state) => {
+    setOpen(state);
   };
- 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
- 
 
+const handleNavigation = (path) => {
+    navigate(path);  // Navigate to the page
+    toggleDrawer(false);  // Close the sidebar
+  };
  
 
 
   return (
-    <AppBar position="static" sx={{background:"white" }}>
+    <AppBar position="sticky" sx={{background:"white", p:2 }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
            
 
-        <Box component="img" src="https://demo.klayemorrison.com/jasper-hotel/system/images/logo.png" alt="Logo" sx={{ height: 25 }} />
+        <Box component="img" src="https://demo.klayemorrison.com/jasper-hotel/system/images/logo.png" alt="Logo" sx={{ height: 30 }} />
 
 
-
-
-
-
-        <Box sx={{ width:"100%", flexGrow: 1, display: { xs: 'flex', md: 'flex', lg:"none", border:""} ,marginLeft:"auto" , justifyContent:"end"}}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon sx={{color:"black"}}/>
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-
-                
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{ display: { xs: 'block', md: 'none' },
-              
-
-            }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}  sx={{      }} >
-                  <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
+ 
 
 
 
@@ -109,7 +67,85 @@ function Navbar() {
 
 
 
-   <Box sx={{ flexGrow: 1, display: {  xs:'none', lg: "flex"     }, gap: "20px", marginLeft: "15%" , color:"black"}  }>
+       <>
+      {/* Sidebar Toggle Button */}
+      <IconButton onClick={()=>toggleDrawer(true)} sx={{ display:{md:"block", lg:"none", marginLeft:"auto" }  }}>
+        <MenuIcon />
+      </IconButton>
+
+      {/* Sidebar Drawer */}
+      <Drawer anchor="right" open={open} onClose={()=>toggleDrawer(false)}
+      sx={{ display:{md:"block", lg:"none", marginLeft:"auto" }  }}
+      >
+        <Box sx={{ width: 250, p: 2 }}>
+            <IconButton onClick={() => toggleDrawer(false)} sx={{ position: "absolute", top: 3, right: 1 }}>
+            <CloseIcon />
+          </IconButton>
+          <List>
+               <ListItem disablePadding>
+              <ListItemButton onClick={() => handleNavigation("/")}>
+                <ListItemText primary="Home" sx={{py:3, 
+                m:0, textAlign:"center", borderRadius:"10px",
+                  border:"1px solid lightblue", width:"100%"
+                }} />
+              </ListItemButton>
+            </ListItem>
+
+             <ListItem disablePadding>
+              <ListItemButton onClick={() => handleNavigation("/accommodation")}>
+                <ListItemText primary="Accommodation" sx={{py:3, 
+                m:0, textAlign:"center", borderRadius:"10px",
+                  border:"1px solid lightblue", width:"100%"
+                }} />
+              </ListItemButton>
+            </ListItem>
+
+           <ListItem disablePadding>
+              <ListItemButton onClick={() => handleNavigation("/templates")}>
+                <ListItemText primary="Templates" sx={{py:3, 
+                m:0, textAlign:"center", borderRadius:"10px",
+                  border:"1px solid lightblue", width:"100%"
+                }} />
+              </ListItemButton>
+            </ListItem>
+
+            <ListItem disablePadding>
+              <ListItemButton onClick={() => handleNavigation("/sections")}>
+                <ListItemText primary="Sections" sx={{py:3, 
+                m:0, textAlign:"center", borderRadius:"10px",
+                  border:"1px solid lightblue", width:"100%"
+                }} />
+              </ListItemButton>
+            </ListItem>
+
+            <ListItem disablePadding>
+              <ListItemButton onClick={() => handleNavigation("/mega-menu")}>
+                <ListItemText primary="Mega Menu" sx={{py:3, 
+                m:0, textAlign:"center", borderRadius:"10px",
+                  border:"1px solid lightblue", width:"100%"
+                }} />
+              </ListItemButton>
+            </ListItem>
+
+          </List>
+        </Box>
+      </Drawer>
+    </>
+
+
+
+
+
+  
+ 
+
+
+
+
+
+
+
+   <Box sx={{ flexGrow: 1, display: {  xs:'none', lg: "flex"     }, gap: "20px", marginLeft: "17%" , color:"black"}  }>
           <Button onClick={() => navigate("/")} sx={{ color: "black" }}>
             Home
           </Button>
@@ -133,25 +169,7 @@ function Navbar() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          
-
-
-           
-
+  
 
 
 

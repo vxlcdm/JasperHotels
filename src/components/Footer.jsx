@@ -5,6 +5,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import EmailIcon from "@mui/icons-material/Email";
+ 
 
 
 
@@ -57,23 +58,41 @@ const Footer = () => {
     </Box>
 
 
-<Box sx={{ backgroundColor: "#1E1E1E", color: "white", padding: "40px 20px", textAlign: "center" }}>
+<Box sx={{ backgroundColor: "#1E1E1E", color: "white", padding: "60px 20px 40px 20px", textAlign: "center", }}>
      
-      <Box sx={{ display: "flex", justifyContent: "center", gap: 2, mb: 2 }}>
-        <IconButton color="primary"><FacebookIcon sx={{ color: "white" }} /></IconButton>
-        <IconButton color="primary"><TwitterIcon sx={{ color: "white" }} /></IconButton>
-        <IconButton color="primary"><InstagramIcon sx={{ color: "white" }} /></IconButton>
+      <Box sx={{ display: "flex", justifyContent: "center", gap: 2, mb: 2, alignItems:"center" }}>
+        <IconButton color="primary"><FacebookIcon sx={{ backgroundColor:"#494949",p:2,color: "white",
+        borderRadius:"10px",
+          "&:hover":{
+            backgroundColor:"#909090"
+          }
+         }} /></IconButton>
+        <IconButton color="primary"><TwitterIcon sx={{ backgroundColor:"#494949",p:2,color: "white",
+        borderRadius:"10px",
+          "&:hover":{
+            backgroundColor:"#909090"
+          }
+         }} /></IconButton>
+        <IconButton color="primary"><InstagramIcon sx={{ backgroundColor:"#494949",p:2,color: "white",
+        borderRadius:"10px",
+          "&:hover":{
+            backgroundColor:"#909090"
+          }
+         }} /></IconButton>
       </Box>
 
     
-      <Box sx={{ display: "flex", justifyContent: "center", gap: 3, mb: 1 }}>
-        <Link href="/" color="inherit" underline="none">Home</Link>
-        <Link href="/theme" color="inherit" underline="none">Theme</Link>
-        <Link href="/contact" color="inherit" underline="none">Contact</Link>
+      <Box sx={{ display:{xs:"none", md:"flex", lg:"flex", justifyContent: "center", gap: 10}, mb: 2, mt:2, fontSize:"1.1rem", letterSpacing:"2px", wordSpacing:"5px", textAlign:"center", border:"" }}>
+        <Link to="/" color="inherit" underline="none">Home</Link>
+        <Link to="/theme" color="inherit" underline="none">Theme</Link>
+        <Link to="/contact" color="inherit" underline="none">Contact</Link>
       </Box>
 
       
-      <Typography variant="body2">Jasper Hotels © 2025 | Contact: +123 456 7890</Typography>
+      <Box sx={{display:"flex", justifyContent:"center", mb:2 }}>
+        <Typography variant="body2" sx={{fontWeight:"800"}}>Jasper Hotels © 2025 </Typography>
+      <Typography sx={{display:{xs:"none", md:"inline-block", fontWeight:"800"   }}} variant="body2"> | Contact: +123 456 7890</Typography>
+      </Box>
       </Box>
 </>
   );

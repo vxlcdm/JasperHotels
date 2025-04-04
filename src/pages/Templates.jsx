@@ -1,9 +1,13 @@
 import React from 'react'
+import Templ from './template/Templ'
+
 
 const Templates = () => {
-  return (
-    <div>Templates</div>
-  )
+  return (<>
+  
+  <Templ/>
+  
+  </>)
 }
 
 export default Templates

@@ -1,8 +1,9 @@
 import React from 'react'
+import Sec from '../pages/sections/Sec';
 
 const Sections = () => {
   return (
-    <div>Sections</div>
+    <Sec/>
   )
 }
 

@@ -1,9 +1,24 @@
 import React from 'react'
+import Accmo from './accommodation/Accmo'
+
 
 const Accommodation = () => {
-  return (
-    <div>Accommodation</div>
-  )
-}
+  return (<>
+  
+  
+  
+  <Accmo/>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </> );
+};
 
-export default Accommodation
+export default Accommodation;
