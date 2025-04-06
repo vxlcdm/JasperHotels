@@ -1,12 +1,57 @@
-import React from "react";
-import { Box, Typography, Grid, Container, Button } from "@mui/material";
+import React, { useState } from "react";
+import { Box, Typography, Grid, Container, Button, Stack  } from "@mui/material";
 import Accommodation from './../Accommodation';
 import StarIcon from "@mui/icons-material/Star"; 
 import VisibilityIcon from "@mui/icons-material/Visibility"; 
 import SentimentSatisfiedIcon from "@mui/icons-material/SentimentSatisfied"; 
+import HotelIcon from "@mui/icons-material/Hotel";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import GroupIcon from "@mui/icons-material/Group";
+import ChildCareIcon from "@mui/icons-material/ChildCare";
+import MeetingRoomIcon from "@mui/icons-material/MeetingRoom";
+
+
+
+
+
+
+
+
+
+const subtitles = [
+  { text: "Explore Hotel", image: "https://picsum.photos/seed/explore/2560/1440" },
+  { text: "Accommodation", image: "https://picsum.photos/seed/accommodation/2560/1440" },
+  { text: "Restaurant", image: "https://picsum.photos/seed/restaurant/2560/1440" },
+  { text: "Photo Gallery", image: "https://picsum.photos/seed/gallery/2560/1440" },
+  { text: "Special Offer", image: "https://picsum.photos/seed/offer/2560/1440" },
+  { text: "Location", image: "https://picsum.photos/seed/location/2560/1440" }
+];
+
+
+
+
+const infoItems = [
+  { title: "Check In", icon: <AccessTimeIcon fontSize="medium" /> },
+  { title: "Check Out", icon: <AccessTimeIcon fontSize="medium" /> },
+  { title: "Adults", icon: <GroupIcon fontSize="medium" /> },
+  { title: "Children", icon: <ChildCareIcon fontSize="medium" /> },
+  { title: "Room", icon: <MeetingRoomIcon fontSize="medium" /> }
+];
 
 const Hero = () => {
-  
+  const [isButtonHover, setIsButtonHover] = useState(false);
+   const [isSeeAllHover, setIsSeeAllHover] = useState(false);
+
+ const [hoveredIndexImage, setHoveredIndexImage] = useState(null);
+
+  const backgroundImage =
+    hoveredIndexImage !== null
+      ? subtitles[hoveredIndexImage].image
+      : "https://picsum.photos/seed/jasperhero/2560/1440";
+
+
+
+
 
   return (
     <>
@@ -17,34 +62,159 @@ const Hero = () => {
     <Box sx={{ width: "100%", overflowX: "hidden" }}>
       
       {/* Hero Banner */}
+
       <Box
         sx={{
+          mt:1,
           height: "100vh",
           backgroundImage: "url('https://demo.klayemorrison.com/jasper-hotel/preview/2000x850-1.jpg')", 
-          backgroundSize: "cover",
+          // backgroundSize: "cover",
           backgroundPosition: "center",
           display: "flex",
+          position:"relative",
           alignItems: "center",
           justifyContent: "center",
            backgroundAttachment:"fixed",
            color:"white",
           textAlign: "center",
           flexDirection:"column",
+           transition: "all 0.7s ease",
+            backgroundSize: {
+    xs: isButtonHover ? "530%" : "500%",
+    sm: isButtonHover ? "280%" : "250%",
+    md: isButtonHover ? "180%" : "150%",
+    lg: isButtonHover ? "170%" : "140%",
+    xl: isButtonHover ? "150%" : "120%",
+  },
+  transition: "background-size 0.4s ease"
+           ,
+           backgroundRepeat:"no-repeat",
+           transition: "background-size 0.7s ease",
+
         }}
       >
-        <Typography variant="h1" fontWeight="bold" sx={{fontFamily: "Sacramento"}}>Welcome to Our Site</Typography>
-        <Typography variant="h5" sx={{m:2, letterSpacing:"5px"}}>START SERVICE</Typography>
+        <Box sx={{
+                   width:"100%",
+                   height:"100%",
+                  //  border:"4px solid red",
+                    display:"flex",
+              //  border:"2px solid blue",
+               justifyContent:"center",
+               flexDirection:'column',
+           transition: "all 0.7s ease",
+               alignItems:"center",
+               bgcolor: isButtonHover
+  ? "hsla(10, 10%, 10%, 0.5)"
+  : "hsla(10, 10%, 10%, 0.1)"
+              //  bgcolor:"red",
+       
+                   
+               }}>
+             <Typography
+               variant="h2"
+               sx={{
+                 fontFamily: "'Sacramento', cursive",
+                 fontSize: { xs: "2.5rem", md: "4rem" 
+                   ,lg:"6rem"
+                 },
+                 color: "white",
+                 mb: 2
+               }}
+             >
+               Welcome to our site
+             </Typography>
+       
+             <Typography variant="h6" sx={{ mb: 4, color: "white" }}>
+               START YOUR SERVICE
+             </Typography>
+       
+             <Button
+               onMouseEnter={() => setIsButtonHover(true)}
+               onMouseLeave={() => setIsButtonHover(false)}
+               sx={{
+                 px: isButtonHover ? 4 : 2,
+                 py: 1.5,
+                 fontSize: "1rem",
+                 backgroundColor: "#1976d2",
+                 color: "white",
+                 borderRadius: 3,
+                 transition: "all 0.3s ease",
+                 textTransform: "none",
+                 "&:hover": {
+                   backgroundColor: "#1565c0"
+                 }
+               }}
+             >
+               {isButtonHover ? "Explore Hotels >" : "Explore Hotels"}
+             </Button>
 
-        <Button variant="contained" sx={{px:4, py:2,display:"flex", flexDirection:"row",  fontSize:"1.2rem", overflow:"hidden", height:"70px", width:"240px",
-          "&:hover":{
-            transition:"0.4s all ease",
-              paddingRight: "80px",
-              width:"300px"
-          }
-        }}>
-          <Typography variant="h5" sx={{textWrap:"nowrap", pl:6}}>EXPLORE  HOTELS</Typography>
-           <Typography variant="h5" sx={{ml:4}}> > </Typography>
-            </Button>
+              <Box
+                   sx={{
+                     width: "100%",
+                     backgroundColor: "hsla(0, 0.00%, 0.00%, 0.00)",
+                     position:"absolute",
+                     bottom: 10,
+                     left: 0,
+                     display: "flex",
+                       justifyContent: "center",
+                       alignItems: "center",
+                     zIndex:99,
+             
+                   }}
+                 >
+                   <Box
+                     sx={{
+                       display: "flex",
+                       justifyContent: "space-around",
+                       alignItems: "center",
+                       px: 0,
+                       py: 0,
+                         maxWidth:"100%",
+                         gap:0,
+                         borderRadius:2,
+                    backgroundColor: "hsl(0, 3.60%, 11.00%)",
+             
+                     }}
+                   >
+                     {infoItems.map((item, index) => (
+                       <Box
+                         key={index}
+                         sx={{
+                           display: "flex",
+                           flexDirection: "column",
+                           alignItems: "center",
+                           px: 1,
+                           width:"100px",
+                           py: 1,
+                           color:"white",
+                           borderRadius: 2,
+                             fontSize:"0.8rem",
+                           
+                           boxSizing:"border-box",
+                           transition: "background-color 0.3s ease",
+                           "&:hover": {
+                             backgroundColor: "gray"
+                           }
+                         }}
+                       >
+                         {item.icon}
+                         <Typography fontWeight="bold" mt={1}
+                         sx={{
+                             fontSize:{xs:"0.5rem",
+                                 sm:"0.7rem",
+                                 md:"0.8rem",
+             
+                             },
+             
+                         }}>
+                           {item.title}
+                         </Typography>
+                       </Box>
+                     ))}
+                   </Box>
+                 </Box>
+             
+           </Box>
       </Box>
 
 
@@ -155,16 +325,33 @@ const Hero = () => {
           </Box>
         </Grid>
  </Grid>
-      <Button variant="contained" sx={{mt:10,px:4, py:0,display:"flex", flexDirection:"row", justifySelf:"center", fontSize:"1.2rem", overflow:"hidden", height:"50px", width:"240px",
-          "&:hover":{
-            transition:"0.1s all ease",
-              paddingRight: "80px",
-              width:"300px"
-          }
-        }}>
-          <Typography variant="h6" sx={{textWrap:"nowrap", pl:7}}>See all rooms</Typography>
-           <Typography variant="h5" sx={{ml:4}}> > </Typography>
-            </Button>
+
+ 
+
+              <Button
+      onMouseEnter={() => setIsSeeAllHover(true)}
+      onMouseLeave={() => setIsSeeAllHover(false)}
+      sx={{
+        px: isSeeAllHover ? 4 : 2,
+        py: 1.5,
+        mt:8,
+        fontSize: "1rem",
+        backgroundColor: "#1976d2",
+        color: "white",
+        display:"flex", flexDirection:"row", justifySelf:"center",
+        borderRadius: 3,
+        transition: "all 0.3s ease",
+        textTransform: "none",
+        "&:hover": {
+          backgroundColor: "#1565c0"
+        }
+      }}
+    >
+      {isSeeAllHover ? "See All Rooms >" : "See All Rooms"}
+    </Button>
+
+
+            
     </Container>
 
 
@@ -172,18 +359,82 @@ const Hero = () => {
 
 
 
-      {/* One Big Image */}
-      <Box
+      
+<>
+   <Box
+      sx={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        width: "80%",
+        justifySelf:"center",
+        height: "90vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        color: "white",
+        textAlign: "center",
+        transition: "background-image 0.5s ease"
+      }}
+    >
+      <Typography
+        variant="h2"
         sx={{
-          height: "80vh",
-          backgroundImage: "url('https://demo.klayemorrison.com/jasper-hotel/preview/1240x650-2.jpg')", // Replace with your image
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          my: 4,
+          fontFamily: "Sacramento",
+          fontSize: { xs: "2.5rem", md: "4rem" },
+          bgcolor:"hsla(10, 10%, 10%, 0.45)",
+          p:3,mb:2,
+
         }}
-      />
+      >
+        Experience Jasper Hotel
+      </Typography>
 
+      <Stack
+        direction={{xs:"column", sm:"column", md:"row"}}
+        spacing={{xs:0, md:3}}
+        sx={{ mt: 4,  flexWrap: "wrap",
+           justifyContent: "center",
+           justifyItems:"center",
+           alignContent:"center",
+          alignItems:"center",
+          textAlign:"center",
+          // height:"200px",
+           rowGap: 1,
+          // border:"2px solid red",
+         }}
+      >
+        {subtitles.map((item, index) => (
+          <Typography
+            key={index}
+            onMouseEnter={() => setHoveredIndexImage(index)}
+             
+            sx={{
+              fontSize: "1.1rem",
+              cursor: "pointer",
+              bgcolor:"hsla(10, 10%, 10%, 0.45)",
+          p:1,
+          // m:2,
+          display:'flex',
+          flexWrap:"wrap",
+          justifyContent:"center",
+          alignItems:"center",
+          textAlign:"center",
+              transition: "color 0.3s ease, transform 0.3s ease",
+              "&:hover": {
+                color: "#ff5252",
+                transform: "scale(1.1)"
+              },
 
+            }}
+          >
+            {item.text}
+          </Typography>
+        ))}
+      </Stack>
+    </Box>
+</>
 
 
 
@@ -198,7 +449,7 @@ const Hero = () => {
 
 
       {/* Lots of Lorem Text */}
-      <Container sx={{ py: 5 }}>
+      <Container sx={{ mt:6,py: 5 }}>
         <Typography variant="h4" fontWeight="800" sx={{textAlign:"center"
           , color:"blueviolet",
         }}>Jasper Hotel Template</Typography>
@@ -272,7 +523,7 @@ const Hero = () => {
 
 
       {/* Three Final Images (Side by Side) */}
-       <Container sx={{ py: 5, width:"1170px" }}>
+       <Container sx={{ py: 5, maxWidth:"1170px" }}>
       <Grid container spacing={0} justifyContent="center"
       >
         
@@ -308,6 +559,7 @@ const Hero = () => {
           backgroundColor: "rgba(0, 0, 0, 0.5)", // Optional: Adds contrast
           padding: "8px 16px",
           borderRadius: "5px",
+          textAlign:"center"
         }}
             >
            EXPLORE HOTEL
@@ -394,15 +646,11 @@ const Hero = () => {
           </Typography>
            </Box>
           </Grid>
-
-
-
-
-
- 
-
       </Grid>
     </Container>
+
+
+
 
 
 

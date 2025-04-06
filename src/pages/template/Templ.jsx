@@ -186,22 +186,22 @@ const Templ = () => {
 
 
 <Box sx={{display:"flex", justifyContent:"center", width:"100%", mb:10}}>
-  <Paper elevation={3} sx={{ p: 4, borderRadius: 3,   
-  height: "40vh",
+  <Paper elevation={3} sx={{ py: 11, borderRadius: 3,   
+  height:{ xs:"80vh", sm:"55vh", md:"55vh"  ,lg:"40vh", xl:"35vh"} ,
           backgroundImage: "url('https://picsum.photos/seed/picsumddfg/1920/1080')", 
           backgroundSize: "cover",
           backgroundPosition: "center",
           
     width:"1170px", display:"flex", justifyContent:"center", flexDirection:"column", alignItems:"center" }}>
-        <Paper sx={{
- p: 4, borderRadius: 3,   
+        <Paper sx={{width:"100%",
+ p: 0, borderRadius: 3,   
   height: "100%",
-          backgroundColor:"#0000007d",
-    width:"1170px", display:"flex", justifyContent:"center", flexDirection:"column", alignItems:"center"
+          backgroundColor:"#0000007d", 
+    maxWidth:"1170px", display:"flex", justifyContent:"center", flexDirection:"column", alignItems:"center"
 
         }}>
-      <Typography variant="h3" fontWeight="bold" gutterBottom
-      sx={{color:"white", p:2}}
+      <Typography variant="h4" fontWeight="bold" gutterBottom
+      sx={{color:"white", p:0, textAlign:"center"}}
       >
         Last Month at Jasper Hotel
       </Typography>
@@ -211,39 +211,44 @@ const Templ = () => {
         {/* Connecting Line */}
         <Box
           sx={{
-            position: 'absolute',
-            top: '40%',
+            // position: 'absolute',
+            top: '30%',
             left: 0,
             right: 0,
             height: 4,
+            display:{xs:"none",md:"none"},
             backgroundColor: '#1976D2',
             zIndex: 0,
           }}
         />
 
 
-      <Grid container spacing={14} justifyContent="space-between" alignItems="center"   >
+      <Grid container spacing={1} justifyContent="space-around" alignItems="center"  sx={{
+        width:"100%",
+        gap:{ xs:2 , sm:8  , md:15  ,lg:20, xl:25} ,
+      }} >
         {achievements.map((item, index) => (
-              <Grid item xs={3} key={index} sx={{ textAlign: 'center', zIndex: 1 }}>
+              <Grid item xs={3} key={index} sx={{ textAlign: 'center', zIndex: 0 }}>
                    <Box
                 sx={{
                   backgroundColor: 'white',
                   color: '#1976D2',
                   borderRadius: '50%',
-                  width: 160,
-                  height: 160,
+                  width: 100,
+                  height: 100,
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   margin: '0 auto',
-                  fontSize: "4rem",
+                  fontSize: "3rem",
                   fontWeight: '400',
+                  // p:3
                 }}
               >  {item.value}
               </Box>
          
            
-            <Typography variant="subtitle1"  mt={3} color="white" sx={{fontSize:"1.1rem", pb:2}}>
+            <Typography variant="subtitle1"  mt={1} color="white" sx={{fontSize:"1rem", pb:2}}>
               {item.label}
             </Typography>
 

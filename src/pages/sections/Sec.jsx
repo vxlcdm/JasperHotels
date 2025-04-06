@@ -13,7 +13,7 @@ import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import ForumIcon from "@mui/icons-material/Forum";
 import PermMediaIcon from "@mui/icons-material/PermMedia";
 import PhoneInTalkIcon from "@mui/icons-material/PhoneInTalk";
-
+import HeroSlider from './HeroSlider';
 
 
 
@@ -48,6 +48,7 @@ const Sec=()=>{
         </Box>
 
 
+<HeroSlider/>
 
 
         <Box>
