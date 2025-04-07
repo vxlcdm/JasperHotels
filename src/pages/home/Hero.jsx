@@ -366,6 +366,14 @@ const Hero = () => {
 
       
 <>
+   <Container sx={{ py: 0 ,
+        display:"flex", 
+        justifySelf:"center", flexDirection:"row",
+        alignItems:"center",
+        justifyContent:"center",
+        width:"100%",
+        // border:"1px solid red",
+       }}>
    <Box
       sx={{
         backgroundImage: `url(${backgroundImage})`,
@@ -439,6 +447,7 @@ const Hero = () => {
         ))}
       </Stack>
     </Box>
+    </Container>
 </>
 
 
