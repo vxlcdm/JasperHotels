@@ -39,7 +39,7 @@ const ExJsHt=()=>{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        width: "100%",
+        width: "80%",
         justifySelf:"center",
         height: "90vh",
         display: "flex",

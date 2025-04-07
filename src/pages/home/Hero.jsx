@@ -78,7 +78,7 @@ const Hero = () => {
            color:"white",
           textAlign: "center",
           flexDirection:"column",
-           transition: "all 0.7s ease",
+          //  transition: "all 0.7s ease",
             backgroundSize: {
     xs: isButtonHover ? "530%" : "500%",
     sm: isButtonHover ? "280%" : "250%",
@@ -86,8 +86,8 @@ const Hero = () => {
     lg: isButtonHover ? "170%" : "140%",
     xl: isButtonHover ? "150%" : "120%",
   },
-  transition: "background-size 0.4s ease"
-           ,
+  // transition: "background-size 0.4s ease"
+           
            backgroundRepeat:"no-repeat",
            transition: "all 0.7s ease",
 
@@ -232,7 +232,9 @@ const Hero = () => {
 
 
 
-       <Container sx={{ py: 10 }}>
+       <Container sx={{ py: 10 ,
+        display:"flex", justifySelf:"center", flexDirection:"column",
+       }}>
           <Box sx={{display:"flex", justifySelf:"center", flexDirection:"column"}}>
             <Typography variant="h4" fontWeight="800" sx={{textAlign:"center"
           , color:"blueviolet",
@@ -338,7 +340,10 @@ const Hero = () => {
         fontSize: "1rem",
         backgroundColor: "#1976d2",
         color: "white",
-        display:"flex", flexDirection:"row", justifySelf:"center",
+        display:"flex", 
+        flexDirection:"row", 
+        justifySelf:"center",
+        alignSelf:"center",
         borderRadius: 3,
         transition: "all 0.3s ease",
         textTransform: "none",
