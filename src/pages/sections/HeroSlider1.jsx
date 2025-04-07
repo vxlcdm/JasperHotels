@@ -27,14 +27,13 @@ const images = [
   "https://picsum.photos/seed/picsxum/2560/1440"
 ];
 
-const HeroSlider = () => {
+const HeroSlider1 = () => {
   const [index, setIndex] = useState(0);
 
   const handleNext = () => {
     setIndex((prev) => (prev + 1) % images.length);
   };
 const [isButtonHover, setIsButtonHover] = useState(false);
-
   const handlePrev = () => {
     setIndex((prev) => (prev - 1 + images.length) % images.length);
   };
@@ -211,84 +210,15 @@ const [isButtonHover, setIsButtonHover] = useState(false);
     >
 
 
-        <Box sx={{
-            width:"100%",
-            height:"100%",
-            // border:"1px solid red",
-             display:"flex",
-        // border:"2px solid blue",
-        justifyContent:"center",
-        flexDirection:'column',
-        alignItems:"center",
-
-            
-        }}>
-      <Typography
-        variant="h2"
-        sx={{
-          fontFamily: "'Sacramento', cursive",
-          fontSize: { xs: "2.5rem", md: "4rem" 
-            ,lg:"6rem"
-          },
-          color: "white",
-          mb: 2
-        }}
-      >
-        Welcome to our site
-      </Typography>
-
-      <Typography variant="h6" sx={{ mb: 4, color: "white" }}>
-        START YOUR SERVICE
-      </Typography>
-
-      <Button
-        onMouseEnter={() => setIsButtonHover(true)}
-        onMouseLeave={() => setIsButtonHover(false)}
-        sx={{
-          px: isButtonHover ? 4 : 2,
-          py: 1.5,
-          fontSize: "1rem",
-          backgroundColor: "#1976d2",
-          color: "white",
-          borderRadius: 3,
-          transition: "all 0.3s ease",
-          textTransform: "none",
-          "&:hover": {
-            backgroundColor: "#1565c0"
-          }
-        }}
-      >
-        {isButtonHover ? "Explore Hotels >" : "Explore Hotels"}
-      </Button>
-    </Box>
+        
    </Box> 
 </>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+{/* idhar kuch content likha dena  */}
+ 
     </Box>
     </>
   );
 };
 
-export default HeroSlider;
+export default HeroSlider1;

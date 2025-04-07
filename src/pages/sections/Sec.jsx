@@ -14,15 +14,75 @@ import ForumIcon from "@mui/icons-material/Forum";
 import PermMediaIcon from "@mui/icons-material/PermMedia";
 import PhoneInTalkIcon from "@mui/icons-material/PhoneInTalk";
 import HeroSlider from './HeroSlider';
+import HeroSlider1 from './HeroSlider1';
+import Panel from './Panel';
+import ExJsHt from './ExJsHt';
+import HotelIcon from "@mui/icons-material/Hotel";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import GroupIcon from "@mui/icons-material/Group";
+import ChildCareIcon from "@mui/icons-material/ChildCare";
+import MeetingRoomIcon from "@mui/icons-material/MeetingRoom";
+import IS from './IS';
+import IST from './IST';
+import ISCD from './ISCD';
+import ISMS from './ISMS';
+import ICN from './ICN';
+import ICN2 from './ICN2';
+import {useMediaQuery as UMQ } from '@mui/material';
+
+
+
+
+
+
+
+
+
+
+
+const infoItems = [
+  { title: "Check In", icon: <AccessTimeIcon fontSize="medium" /> },
+  { title: "Check Out", icon: <AccessTimeIcon fontSize="medium" /> },
+  { title: "Adults", icon: <GroupIcon fontSize="medium" /> },
+  { title: "Children", icon: <ChildCareIcon fontSize="medium" /> },
+  { title: "Room", icon: <MeetingRoomIcon fontSize="medium" /> }
+];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 
 const Sec=()=>{
-    return(<>
 
-                {/* Hero Section */}
+  const isMobileView=UMQ("(max-width:600px)");
+
+    return(<>
+ 
       <Box
         sx={{
           height: "100vh",
@@ -48,7 +108,6 @@ const Sec=()=>{
         </Box>
 
 
-<HeroSlider/>
 
 
         <Box>
@@ -63,18 +122,17 @@ const Sec=()=>{
              </Typography>
         <Box
         sx={{
-          height: "75vh",
-          backgroundImage: `url("https://picsum.photos/seed/idcdfdvdwe3fvdah/1920/1080")`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          display: "flex",
-        
+            display: "flex",
           alignItems: "center",
           justifyContent: "center",
           color: "black",
           textAlign: "center",
+        
         }}
       >
+        <HeroSlider/>
+
+
         </Box>
         </Box>
 
@@ -97,9 +155,7 @@ const Sec=()=>{
         <Box
         sx={{
           height: "75vh",
-          backgroundImage: `url("https://picsum.photos/seed/idcdfdvcdwe3fvdah/1920/1080")`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+         
           display: "flex",
         
           alignItems: "center",
@@ -108,6 +164,7 @@ const Sec=()=>{
           textAlign: "center",
         }}
       >
+        <HeroSlider1/>
         </Box>
         </Box>
 
@@ -126,9 +183,7 @@ const Sec=()=>{
         <Box
         sx={{
           height: "75vh",
-          backgroundImage: `url("https://picsum.photos/seed/idcdfdvvcdwe3fvddesvdah/1920/1080")`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+        
           display: "flex",
         
           alignItems: "center",
@@ -137,12 +192,34 @@ const Sec=()=>{
           textAlign: "center",
         }}
       >
+        <Panel/>
         </Box>
         </Box>
 
 
 
-        <Box>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <Box
+        sx={{
+          position:"relative",
+        }}>
             <Typography 
              variant="h4" 
              fontWeight="bold" 
@@ -161,13 +238,126 @@ const Sec=()=>{
           display: "flex",
         
           alignItems: "center",
+          flexDirection:'column',
+          gap:2,
           justifyContent: "center",
           color: "black",
           textAlign: "center",
         }}
       >
+        <Typography variant='h4'
+        sx={{
+          color:"white",
+          fontWeight:600,
+           backgroundColor: "hsla(0, 0.00%, 0.00%, 0.6)",
+           p:1
+        }}>
+Lorem ipsum dolor sit amet
+        </Typography>
+        <Typography variant='body1' sx={{
+          color:"white",
+          // fontWeight:300,
+           backgroundColor: "hsla(0, 0.00%, 0.00%, 0.6)",
+           p:1
+        }}>
+3 February, 2018
+        </Typography>
+        
+         <Box
+              sx={{
+                width: "100%",
+                backgroundColor: "hsla(0, 0.00%, 0.00%, 0.00)",
+                position:"absolute",
+                bottom: 10,
+                left: 0,
+                display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                zIndex:99,
+        
+              }}
+            >
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-around",
+                  alignItems: "center",
+                  px: 0,
+                  py: 0,
+                    maxWidth:"100%",
+                    gap:0,
+                    borderRadius:2,
+               backgroundColor: "hsl(0, 3.60%, 11.00%)",
+        
+                }}
+              >
+                {infoItems.map((item, index) => (
+                  <Box
+                    key={index}
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      px: 1,
+                      width:"100px",
+                      py: 1,
+                      color:"white",
+                      borderRadius: 2,
+                        fontSize:"0.8rem",
+                      
+                      boxSizing:"border-box",
+                      transition: "background-color 0.3s ease",
+                      "&:hover": {
+                        backgroundColor: "gray"
+                      }
+                    }}
+                  >
+                    {item.icon}
+                    <Typography fontWeight="bold" mt={1}
+                    sx={{
+                        fontSize:{xs:"0.5rem",
+                            sm:"0.7rem",
+                            md:"0.8rem",
+        
+                        },
+        
+                    }}>
+                      {item.title}
+                    </Typography>
+                  </Box>
+                ))}
+              </Box>
+            </Box>
+        
         </Box>
         </Box>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
          <Box>
@@ -183,9 +373,7 @@ const Sec=()=>{
         <Box
         sx={{
           height: "75vh",
-          backgroundImage: `url("https://picsum.photos/seed/idcdfdvvcdswe3fbvncddesnvdah/1920/1080")`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+          
           display: "flex",
         
           alignItems: "center",
@@ -194,6 +382,7 @@ const Sec=()=>{
           textAlign: "center",
         }}
       >
+        <IS/>
         </Box>
         </Box>
 
@@ -213,9 +402,7 @@ const Sec=()=>{
         <Box
         sx={{
           height: "75vh",
-          backgroundImage: `url("https://picsum.photos/seed/idcdfdrxvvcdswe3fvcddesvdah/1920/1080")`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+         
           display: "flex",
         
           alignItems: "center",
@@ -224,27 +411,29 @@ const Sec=()=>{
           textAlign: "center",
         }}
       >
+        <IST/>
         </Box>
         </Box>
 
 
 
-        <Box>
+        <Box sx={{
+        }}>
             <Typography 
              variant="h4" 
              fontWeight="bold" 
              color="Black"
              sx={{ fontSize: { xs: "2.2rem", sm: "2.9rem", md: "3.6rem",
-                 lg: "2.2rem" }, textAlign:"center", p:10 }}
+                 lg: "2.2rem" }, textAlign:"center", p:10 ,
+          pb:isMobileView?24:15
+                }}
              >
              Image Slideshow - Content Sidebar
              </Typography>
         <Box
         sx={{
           height: "75vh",
-          backgroundImage: `url("https://picsum.photos/seed/idcdfdvvcdswe3fvcfbdbnzdgrbzzzddesvdah/1920/1080")`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+       
           display: "flex",
         
           alignItems: "center",
@@ -253,8 +442,12 @@ const Sec=()=>{
           textAlign: "center",
         }}
       >
+        <ISCD/>
         </Box>
         </Box>
+
+
+
 
 
         <Box>
@@ -263,16 +456,16 @@ const Sec=()=>{
              fontWeight="bold" 
              color="Black"
              sx={{ fontSize: { xs: "2.2rem", sm: "2.9rem", md: "3.6rem",
-                 lg: "2.2rem" }, textAlign:"center", p:10 }}
+                 lg: "2.2rem" }, textAlign:"center", p:10,
+          py:isMobileView?24:15
+                 }}
              >
              Image Slideshow - Map Sidebar
              </Typography>
         <Box
         sx={{
           height: "75vh",
-          backgroundImage: `url("https://picsum.photos/seed/idcdfdvvcdswe3fvcbbbbbbbzbbbbrddesvdah/1920/1080")`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+        
           display: "flex",
         
           alignItems: "center",
@@ -281,6 +474,7 @@ const Sec=()=>{
           textAlign: "center",
         }}
       >
+         <ISMS/>
         </Box>
         </Box>
 
@@ -292,16 +486,16 @@ const Sec=()=>{
              fontWeight="bold" 
              color="Black"
              sx={{ fontSize: { xs: "2.2rem", sm: "2.9rem", md: "3.6rem",
-                 lg: "2.2rem" }, textAlign:"center", p:10 }}
+                 lg: "2.2rem" }, textAlign:"center", p:10,
+          pt:isMobileView?24:15
+                 }}
              >
              Image Carousel
              </Typography>
         <Box
         sx={{
           height: "75vh",
-          backgroundImage: `url("https://picsum.photos/seed/iddcdfdvvcdswe3fvbcddesvdah/1920/1080")`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+         
           display: "flex",
         
           alignItems: "center",
@@ -310,6 +504,7 @@ const Sec=()=>{
           textAlign: "center",
         }}
       >
+        <ICN/>
         </Box>
         </Box>
 
@@ -330,9 +525,7 @@ const Sec=()=>{
         <Box
         sx={{
           height: "75vh",
-          backgroundImage: `url("https://picsum.photos/seed/idcdfdvvcdswe3fvcdvbdesvdah/1920/1080")`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+         
           display: "flex",
         
           alignItems: "center",
@@ -341,38 +534,14 @@ const Sec=()=>{
           textAlign: "center",
         }}
       >
+        <ICN2/>
         </Box>
         </Box>
 
 
 
 
-         <Box>
-            <Typography 
-             variant="h4" 
-             fontWeight="bold" 
-             color="Black"
-             sx={{ fontSize: { xs: "2.2rem", sm: "2.9rem", md: "3.6rem",
-                 lg: "2.2rem" }, textAlign:"center", p:10 }}
-             >
-            Visual Navigation
-             </Typography>
-        <Box
-        sx={{
-          height: "75vh",
-          backgroundImage: `url("https://picsum.photos/seed/idcdfdvvcdswe3zdfdffzfvcddesvdah/1920/1080")`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          display: "flex",
         
-          alignItems: "center",
-          justifyContent: "center",
-          color: "black",
-          textAlign: "center",
-        }}
-      >
-        </Box>
-        </Box>
 
 
 
@@ -391,9 +560,7 @@ const Sec=()=>{
         <Box
         sx={{
           height: "75vh",
-          backgroundImage: `url("https://picsum.photos/seed/idcdfdvvcdswe3dfbbfhilhbgu8ig;j;eddfcrdczewfvcddesvdah/1920/1080")`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+         
           display: "flex",
         
           alignItems: "center",
@@ -402,6 +569,7 @@ const Sec=()=>{
           textAlign: "center",
         }}
       >
+        <ExJsHt/>
         </Box>
         </Box>
 

@@ -14,17 +14,17 @@ const roomTitles = [
 const dishData = [
   {
     title: "Grilled Salmon",
-    content: "Perfectly cooked salmon with a lemon garlic butter sauce served with seasonal vegetables.",
+    content: "Perfectly cooked salmon with a lemon garlic butter sauce served with.",
     image: "https://demo.klayemorrison.com/jasper-hotel/preview/500x300-6.jpg",
   },
   {
     title: "Italian Pasta",
-    content: "Classic spaghetti tossed with rich tomato sauce, fresh herbs, and parmesan cheese.",
+    content: "Classic spaghetti tossed with rich  sauce, fresh , and parmesan cheese.",
     image: "https://demo.klayemorrison.com/jasper-hotel/preview/500x300-6.jpg",
   },
   {
     title: "Dessert Platter",
-    content: "An assortment of cakes, tarts, and chocolate delights for the perfect sweet ending.",
+    content: "An assortment of cakes,  and chocolate delights for the perfect sweet.",
     image: "https://demo.klayemorrison.com/jasper-hotel/preview/500x300-6.jpg",
   },
 ];

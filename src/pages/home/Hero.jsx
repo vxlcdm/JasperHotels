@@ -89,7 +89,7 @@ const Hero = () => {
   transition: "background-size 0.4s ease"
            ,
            backgroundRepeat:"no-repeat",
-           transition: "background-size 0.7s ease",
+           transition: "all 0.7s ease",
 
         }}
       >
