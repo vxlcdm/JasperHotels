@@ -25,7 +25,7 @@ import 'country-flag-icons/react/3x2';
 import ExpAccRes from './ExpAccRes';
 import { Link } from 'react-router-dom';
 import {    useMediaQuery,   } from '@mui/material';
-
+import ExpAccResSb from './ExpAccResSb';
 
 
 
@@ -91,35 +91,7 @@ const countries = [
   { code: "IN", label: "Hindi", flag: "🇮🇳" },
 ];
 
- const menuData = [
-  {
-    title: 'Services',
-    path: '/services',
-    submenu: [
-      { label: 'Room Service', path: '/services/room' },
-      { label: 'Spa', path: '/services/spa' },
-      { label: 'Laundry', path: '/services/laundry' },
-    ],
-  },
-  {
-    title: 'Dining',
-    path: '/dining',
-    submenu: [
-      { label: 'Restaurant', path: '/dining/restaurant' },
-      { label: 'Bar', path: '/dining/bar' },
-      { label: 'Coffee Lounge', path: '/dining/coffee' },
-    ],
-  },
-  {
-    title: 'Activities',
-    path: '/activities',
-    submenu: [
-      { label: 'Gym', path: '/activities/gym' },
-      { label: 'Swimming Pool', path: '/activities/pool' },
-      { label: 'Yoga Classes', path: '/activities/yoga' },
-    ],
-  },
-];
+ 
 
 
 
@@ -129,7 +101,7 @@ function Navbar() {
    const theme = useTheme();
    const [isHovered, setIsHovered]= useState(-1);
    const [isHoveredJ, setIsHoveredJ]= useState(-1);
-   console.log(isHovered);
+  //  console.log(isHovered);
    
    const isMobile= UMQ("(max-width:899.5px");
    const isSmallMobile=UMQ("(max-width:349.50px");
@@ -188,10 +160,7 @@ const handleNavigation = (path) => {
 
 
 
-
-
-
-
+ 
 
        <>
      
@@ -201,12 +170,20 @@ const handleNavigation = (path) => {
  
 
       <Drawer anchor="right" open={open} onClose={()=>toggleDrawer(false)}
-      sx={{ display:{md:"block", lg:"none", marginLeft:"auto" }  }}
+      sx={{ display:{md:"block", lg:"none", marginLeft:"auto",
+          // bgcolor: 'hsla(100,10%,10%,0.9)',
+
+       }  }}
       >
         <Box sx={{ width: 250, p: 2,
+        height:"500vh",
+          // border:"4px solid blue",
+          overflowX:"hidden",
           bgcolor: 'hsla(100,10%,10%,0.9)',
+
+
         }}>
-            <IconButton onClick={() => toggleDrawer(false)} sx={{ position: "absolute", top: 3, right: 1 ,
+            <IconButton onClick={() => toggleDrawer(false)} sx={{ position: "absolute", top: 3, right: 5 ,
 
             }}>
             <CloseIcon />
@@ -231,7 +208,9 @@ const handleNavigation = (path) => {
       </Typography>
 
       <List>
-        {menuData.map((item, index) => (
+       {/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */}
+       
+        {navItems.map((item, index) => (
           <Box key={index} sx={{ mb: 3 }}>
             <ListItem component={Link} to={item.path} sx={{ textDecoration: 'none' }}>
               <ListItemText
@@ -241,12 +220,15 @@ const handleNavigation = (path) => {
                     px: 0,
 
                   }}>
-                    {item.title}
+                    {item.label}
                   </Typography>
                 }
               />
             </ListItem>
-            {item.submenu.map((sub, subIndex) => (
+              
+
+            { item.subItems && item.subItems.length > 0 && 
+                       item.subItems.map((sub, subIndex) => (
               <ListItem
                 key={subIndex}
                 component={Link}
@@ -266,10 +248,24 @@ const handleNavigation = (path) => {
                 />
               </ListItem>
             ))}
+
+
+
           </Box>
         ))}
       </List>
     </Box>
+
+
+{/* yaha pe add kr ahe aur conte t */}
+<Box sx={{
+  mt:20
+}}>
+
+   <ExpAccResSb/>
+   
+</Box>
+
         </Box>
       </Drawer>
     </>

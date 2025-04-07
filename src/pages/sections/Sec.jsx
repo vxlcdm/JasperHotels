@@ -115,8 +115,7 @@ const Sec=()=>{
              variant="h4" 
              fontWeight="bold" 
              color="Black"
-             sx={{ fontSize: { xs: "2.2rem", sm: "2.9rem", md: "3.6rem",
-                 lg: "2.2rem" }, textAlign:"center", p:10 }}
+             sx={{ fontSize: { xs: "2.2rem", sm: "2.9rem",   }, textAlign:"center", p:10 }}
              >
              Hero Slideshow
              </Typography>
@@ -147,8 +146,7 @@ const Sec=()=>{
              variant="h4" 
              fontWeight="bold" 
              color="Black"
-             sx={{ fontSize: { xs: "2.2rem", sm: "2.9rem", md: "3.6rem",
-                 lg: "2.2rem" }, textAlign:"center", p:10 }}
+             sx={{ fontSize: { xs: "2.2rem", sm: "2.9rem", }, textAlign:"center", p:10 }}
              >
              Hero Slideshow - Image Only
              </Typography>
@@ -175,8 +173,7 @@ const Sec=()=>{
              variant="h4" 
              fontWeight="bold" 
              color="Black"
-             sx={{ fontSize: { xs: "2.2rem", sm: "2.9rem", md: "3.6rem",
-                 lg: "2.2rem" }, textAlign:"center", p:10 }}
+             sx={{ fontSize: { xs: "2.2rem", sm: "2.9rem",   }, textAlign:"center", p:10 }}
              >
              Hero Panels
              </Typography>
@@ -224,8 +221,7 @@ const Sec=()=>{
              variant="h4" 
              fontWeight="bold" 
              color="Black"
-             sx={{ fontSize: { xs: "2.2rem", sm: "2.9rem", md: "3.6rem",
-                 lg: "2.2rem" }, textAlign:"center", p:10 }}
+             sx={{ fontSize: { xs: "2.2rem", sm: "2.9rem",   }, textAlign:"center", p:10 }}
              >
              Hero Banner
              </Typography>
@@ -365,8 +361,7 @@ Lorem ipsum dolor sit amet
              variant="h4" 
              fontWeight="bold" 
              color="Black"
-             sx={{ fontSize: { xs: "2.2rem", sm: "2.9rem", md: "3.6rem",
-                 lg: "2.2rem" }, textAlign:"center", p:10 }}
+             sx={{ fontSize: { xs: "1.8rem", sm: "2.9rem",   }, textAlign:"center", p:10,px:1 }}
              >
              Image Slideshow
              </Typography>
@@ -394,8 +389,7 @@ Lorem ipsum dolor sit amet
              variant="h4" 
              fontWeight="bold" 
              color="Black"
-             sx={{ fontSize: { xs: "2.2rem", sm: "2.9rem", md: "3.6rem",
-                 lg: "2.2rem" }, textAlign:"center", p:10 }}
+             sx={{ fontSize: { xs: "1.8rem", sm: "2.9rem",   }, textAlign:"center", p:10, px:1 }}
              >
              Image Slideshow - Thumbnails
              </Typography>
@@ -423,8 +417,7 @@ Lorem ipsum dolor sit amet
              variant="h4" 
              fontWeight="bold" 
              color="Black"
-             sx={{ fontSize: { xs: "2.2rem", sm: "2.9rem", md: "3.6rem",
-                 lg: "2.2rem" }, textAlign:"center", p:10 ,
+             sx={{ fontSize: { xs: "1.8rem", sm: "2.9rem",  }, textAlign:"center", py:10,px:1 ,
           pb:isMobileView?24:15
                 }}
              >
@@ -455,8 +448,7 @@ Lorem ipsum dolor sit amet
              variant="h4" 
              fontWeight="bold" 
              color="Black"
-             sx={{ fontSize: { xs: "2.2rem", sm: "2.9rem", md: "3.6rem",
-                 lg: "2.2rem" }, textAlign:"center", p:10,
+             sx={{ fontSize: { xs: "1.8rem", sm: "2.9rem",  }, textAlign:"center", p:1,
           py:isMobileView?24:15
                  }}
              >
@@ -485,8 +477,7 @@ Lorem ipsum dolor sit amet
              variant="h4" 
              fontWeight="bold" 
              color="Black"
-             sx={{ fontSize: { xs: "2.2rem", sm: "2.9rem", md: "3.6rem",
-                 lg: "2.2rem" }, textAlign:"center", p:10,
+             sx={{ fontSize: { xs: "1.8rem", sm: "2.9rem",   }, textAlign:"center", py:10,
           pt:isMobileView?24:15
                  }}
              >
@@ -517,8 +508,7 @@ Lorem ipsum dolor sit amet
              variant="h4" 
              fontWeight="bold" 
              color="Black"
-             sx={{ fontSize: { xs: "2.2rem", sm: "2.9rem", md: "3.6rem",
-                 lg: "2.2rem" }, textAlign:"center", p:10 }}
+             sx={{ fontSize: { xs: "1.8rem", sm: "2.9rem",   }, textAlign:"center", py:10 }}
              >
             Image Carousel - Navigation
              </Typography>
@@ -552,14 +542,14 @@ Lorem ipsum dolor sit amet
              variant="h4" 
              fontWeight="bold" 
              color="Black"
-             sx={{ fontSize: { xs: "2.2rem", sm: "2.9rem", md: "3.6rem",
-                 lg: "2.2rem" }, textAlign:"center", p:10,  }}
+             sx={{ fontSize: { xs: "1.8rem", sm: "2.9rem", }, textAlign:"center", py:10,  }}
              >
             Visual Navigation
              </Typography>
         <Box
+        
         sx={{
-          height: "75vh",
+          height: "100vh",
          
           display: "flex",
         

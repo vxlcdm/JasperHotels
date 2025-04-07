@@ -4,7 +4,6 @@ import Footer from '../components/Footer.jsx'
 import { Outlet } from 'react-router-dom'
 
 
-
  
 
 
@@ -13,10 +12,10 @@ const PublicLayout = () => {
     <>
     
     
-    
+     
     <Navbar/>
-    {/* <Outlet/> */}
-    {/* <Footer/> */}
+    <Outlet/>
+    <Footer/>
 
     </>
   )
