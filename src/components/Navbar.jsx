@@ -31,54 +31,50 @@ import ExpAccResSb from './ExpAccResSb';
 
 
 
-
 const navItems = [
   {
     label: "Home",
     path: "/home",
     subItems: [
-      { label: "Dashboard", path: "/home/dashboard" },
-      { label: "News", path: "/home/news" },
-      { label: "Updates", path: "/home/updates" }
+      { label: "Dashboard", path: "#" },
+      { label: "News", path: "#" },
+      { label: "Updates", path: "#" }
     ]
   },
   {
     label: "Accommodation",
     path: "/accommodation",
     subItems: [
-      { label: "Our Team", path: "/about/team" },
-      { label: "Mission", path: "/about/mission" },
-      { label: "Careers", path: "/about/careers" }
+      { label: "Our Team", path: "#" },
+      { label: "Mission", path: "#" },
+      { label: "Careers", path: "#" }
     ]
   },
-   {
+  {
     label: "Templates",
     path: "/templates",
     subItems: [
-      { label: "Support", path: "/contact/support" },
-      { label: "Feedback", path: "/contact/feedback" },
-      { label: "FAQs", path: "/contact/faqs" }
+      { label: "Support", path: "#" },
+      { label: "Feedback", path: "#" },
+      { label: "FAQs", path: "#" }
     ]
   },
   {
     label: "Sections",
     path: "/sections",
     subItems: [
-      { label: "Technology", path: "/sections/tech" },
-      { label: "Health", path: "/sections/health" },
-      { label: "Entertainment", path: "/sections/entertainment" }
+      { label: "Technology", path: "#" },
+      { label: "Health", path: "#" },
+      { label: "Entertainment", path: "#" }
     ]
   },
- 
   {
     label: "Mega Menu",
-    path: "#",
-    
+    path: "#"
   },
   {
-    label: <SearchIcon /> ,
-    path: "#",
-     
+    label: <SearchIcon />,
+    path: "#"
   }
 ];
 
