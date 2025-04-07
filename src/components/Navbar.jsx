@@ -208,11 +208,13 @@ const handleNavigation = (path) => {
       </Typography>
 
       <List>
-       {/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */}
+       
        
         {navItems.map((item, index) => (
           <Box key={index} sx={{ mb: 3 }}>
-            <ListItem component={Link} to={item.path} sx={{ textDecoration: 'none' }}>
+            <ListItem component={Link} to={item.path}
+           onClick={() => toggleDrawer(false)}
+            sx={{ textDecoration: 'none' }}>
               <ListItemText
                 primary={
                   <Typography variant="h6" sx={{ color: 'white' ,
@@ -232,6 +234,7 @@ const handleNavigation = (path) => {
               <ListItem
                 key={subIndex}
                 component={Link}
+                onClick={() => toggleDrawer(false)}
                 to={sub.path}
                 sx={{ pl: 5, textDecoration: 'none' }}
               >
