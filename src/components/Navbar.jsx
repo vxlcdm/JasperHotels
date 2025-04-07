@@ -23,6 +23,8 @@ import Temp2 from './Temp2';
 import { Maximize } from '@mui/icons-material';
 import 'country-flag-icons/react/3x2';
 import ExpAccRes from './ExpAccRes';
+import { Link } from 'react-router-dom';
+import {    useMediaQuery,   } from '@mui/material';
 
 
 
@@ -89,7 +91,36 @@ const countries = [
   { code: "IN", label: "Hindi", flag: "🇮🇳" },
 ];
 
- 
+ const menuData = [
+  {
+    title: 'Services',
+    path: '/services',
+    submenu: [
+      { label: 'Room Service', path: '/services/room' },
+      { label: 'Spa', path: '/services/spa' },
+      { label: 'Laundry', path: '/services/laundry' },
+    ],
+  },
+  {
+    title: 'Dining',
+    path: '/dining',
+    submenu: [
+      { label: 'Restaurant', path: '/dining/restaurant' },
+      { label: 'Bar', path: '/dining/bar' },
+      { label: 'Coffee Lounge', path: '/dining/coffee' },
+    ],
+  },
+  {
+    title: 'Activities',
+    path: '/activities',
+    submenu: [
+      { label: 'Gym', path: '/activities/gym' },
+      { label: 'Swimming Pool', path: '/activities/pool' },
+      { label: 'Yoga Classes', path: '/activities/yoga' },
+    ],
+  },
+];
+
 
 
 function Navbar() {
@@ -104,6 +135,8 @@ function Navbar() {
    const isSmallMobile=UMQ("(max-width:349.50px");
    const mobile700=UMQ("(max-width:700px)");
    const isPaddingReq=UMQ(theme.breakpoints.down("md"));
+   
+   const isMobileSD = useMediaQuery(theme.breakpoints.down('sm'));
  
   const [language, setLanguage] = useState("EN");
 
@@ -161,66 +194,82 @@ const handleNavigation = (path) => {
 
 
        <>
-      {/* Sidebar Toggle Button */}
+     
       <IconButton onClick={()=>toggleDrawer(true)} sx={{ display:{md:"block", lg:"none", marginLeft:"auto" }  }}>
         <MenuIcon />
       </IconButton>
+ 
 
-      {/* Sidebar Drawer */}
       <Drawer anchor="right" open={open} onClose={()=>toggleDrawer(false)}
       sx={{ display:{md:"block", lg:"none", marginLeft:"auto" }  }}
       >
-        <Box sx={{ width: 250, p: 2 }}>
-            <IconButton onClick={() => toggleDrawer(false)} sx={{ position: "absolute", top: 3, right: 1 }}>
+        <Box sx={{ width: 250, p: 2,
+          bgcolor: 'hsla(100,10%,10%,0.9)',
+        }}>
+            <IconButton onClick={() => toggleDrawer(false)} sx={{ position: "absolute", top: 3, right: 1 ,
+
+            }}>
             <CloseIcon />
           </IconButton>
-          <List>
-               <ListItem disablePadding>
-              <ListItemButton onClick={() => handleNavigation("/")}>
-                <ListItemText primary="Home" sx={{py:3, 
-                m:0, textAlign:"center", borderRadius:"10px",
-                  border:"1px solid lightblue", width:"100%"
-                }} />
-              </ListItemButton>
-            </ListItem>
+           <Box
+      sx={{
+        // width: isMobileSD ? 200 : 300,
+        color: 'white',
+        px: 3,
+        height: '115vh',
+        // bgcolor: 'hsla(100,10%,10%,0.5)',
 
-             <ListItem disablePadding>
-              <ListItemButton onClick={() => handleNavigation("/accommodation")}>
-                <ListItemText primary="Accommodation" sx={{py:3, 
-                m:0, textAlign:"center", borderRadius:"10px",
-                  border:"1px solid lightblue", width:"100%"
-                }} />
-              </ListItemButton>
-            </ListItem>
+      }}
+    >
+      <Typography variant="h5" gutterBottom textAlign={isMobileSD ? 'center' : 'left'}
+      sx={{
+        bgcolor: 'hsla(100,10%,10%,0.5)',
+        p: 2,
 
-           <ListItem disablePadding>
-              <ListItemButton onClick={() => handleNavigation("/templates")}>
-                <ListItemText primary="Templates" sx={{py:3, 
-                m:0, textAlign:"center", borderRadius:"10px",
-                  border:"1px solid lightblue", width:"100%"
-                }} />
-              </ListItemButton>
-            </ListItem>
+      }}>
+        Menu
+      </Typography>
 
-            <ListItem disablePadding>
-              <ListItemButton onClick={() => handleNavigation("/sections")}>
-                <ListItemText primary="Sections" sx={{py:3, 
-                m:0, textAlign:"center", borderRadius:"10px",
-                  border:"1px solid lightblue", width:"100%"
-                }} />
-              </ListItemButton>
-            </ListItem>
+      <List>
+        {menuData.map((item, index) => (
+          <Box key={index} sx={{ mb: 3 }}>
+            <ListItem component={Link} to={item.path} sx={{ textDecoration: 'none' }}>
+              <ListItemText
+                primary={
+                  <Typography variant="h6" sx={{ color: 'white' ,
+                  bgcolor: 'hsla(100,10%,10%,0.5)',
+                    px: 0,
 
-            <ListItem disablePadding>
-              <ListItemButton onClick={() => handleNavigation("/mega-menu")}>
-                <ListItemText primary="Mega Menu" sx={{py:3, 
-                m:0, textAlign:"center", borderRadius:"10px",
-                  border:"1px solid lightblue", width:"100%"
-                }} />
-              </ListItemButton>
+                  }}>
+                    {item.title}
+                  </Typography>
+                }
+              />
             </ListItem>
+            {item.submenu.map((sub, subIndex) => (
+              <ListItem
+                key={subIndex}
+                component={Link}
+                to={sub.path}
+                sx={{ pl: 5, textDecoration: 'none' }}
+              >
+                <ListItemText
+                  primary={
+                    <Typography variant="h5" sx={{ color: 'white', fontSize: '1rem' ,
+                    bgcolor: 'hsla(100,10%,10%,0.5)',
+                      px: 1,
 
-          </List>
+                    }}>
+                      {sub.label}
+                    </Typography>
+                  }
+                />
+              </ListItem>
+            ))}
+          </Box>
+        ))}
+      </List>
+    </Box>
         </Box>
       </Drawer>
     </>
