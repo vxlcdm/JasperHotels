@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, IconButton } from '@mui/material';
+import { Box, IconButton, Typography, } from '@mui/material';
 import { ChevronLeft, ChevronRight } from '@mui/icons-material';
 
 const images = [
@@ -25,6 +25,40 @@ export default function IST() {
   };
 
   return (
+
+
+    <Box
+      sx={{
+        // my: 10,
+        // position: "relative",
+        // border: "3px  double black",
+
+      }}>
+      <Typography
+        variant="h4"
+        fontWeight="bold"
+        color="black"
+        sx={{
+          fontSize: { xs: "1.1rem", sm: "2.5rem" },
+          mt: 0,
+          pt: 8,
+          pb: 0,
+          // bgcolor: "#328E6E",
+          textAlign: "center",
+        }}
+      >
+        Image Slideshow - Thumbnails
+      </Typography>
+
+
+
+
+
+
+
+
+
+
     <Box
       sx={{
         position: 'relative',
@@ -118,6 +152,7 @@ export default function IST() {
             }}
           />
         ))}
+      </Box>
       </Box>
     </Box>
   );

@@ -19,6 +19,42 @@ export default function  ISCD() {
   const select = (index) => setCurrent(index);
 
   return (
+
+
+
+<Box
+        sx={{
+          // my: 10,
+          // position: "relative",
+          // border: "3px  double black",
+
+        }}>
+        <Typography
+          variant="h4"
+          fontWeight="bold"
+          color="black"
+          sx={{
+            fontSize: { xs: "1.1rem", sm: "2.5rem" },
+            mt: 0,
+            pt: 8,
+            pb: 0,
+            // bgcolor: "#328E6E",
+            textAlign: "center",
+          }}
+        >
+        Image Slideshow - Content Sidebar
+        </Typography>
+
+
+
+
+
+
+
+
+
+
+
     <Box
       sx={{
         display: 'flex',
@@ -165,5 +201,6 @@ export default function  ISCD() {
 
 
     </Box>
+    </Box >
   );
 }

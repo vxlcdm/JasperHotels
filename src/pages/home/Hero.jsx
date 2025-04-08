@@ -379,9 +379,9 @@ const Hero = () => {
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        width: "80%",
+        width: "90%",
         justifySelf:"center",
-        height: "90vh",
+        height: "95vh",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -397,7 +397,7 @@ const Hero = () => {
           fontFamily: "Sacramento",
           fontSize: { xs: "2.5rem", md: "4rem" },
           bgcolor:"hsla(10, 10%, 10%, 0.45)",
-          p:3,mb:2,
+          p: { xs: 2, sm: 3 }, mb: 2,
 
         }}
       >

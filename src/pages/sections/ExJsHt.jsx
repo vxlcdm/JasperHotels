@@ -34,14 +34,40 @@ const ExJsHt=()=>{
 
 
     return(<>
+
+      <Box
+        sx={{
+          // my: 10,
+          // position: "relative",
+          // border: "3px  double black",
+
+        }}>
+        <Typography
+          variant="h4"
+          fontWeight="bold"
+          color="black"
+          sx={{
+            fontSize: { xs: "1.2rem", sm: "2.9rem" },
+            mt: 0,
+            pt: 8,
+            pb: 0,
+            // bgcolor: "#328E6E",
+            textAlign: "center",
+          }}
+        >
+          Visual Navigation
+        </Typography>
+
+
+
    <Box
       sx={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        width: "80%",
+        width: "90%",
         justifySelf:"center",
-        height: "90vh",
+        height: "95vh",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -57,7 +83,7 @@ const ExJsHt=()=>{
           fontFamily: "Sacramento",
           fontSize: { xs: "2.5rem", md: "4rem" },
           bgcolor:"hsla(10, 10%, 10%, 0.45)",
-          p:3,mb:2,
+          p:{xs:2, sm:3},mb:2,
 
         }}
       >
@@ -107,6 +133,8 @@ const ExJsHt=()=>{
         ))}
       </Stack>
     </Box>
+
+      </Box>
 </>)
 }
 export default ExJsHt;

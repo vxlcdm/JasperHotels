@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, IconButton } from '@mui/material';
+import { Box, Typography, IconButton } from '@mui/material';
 import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material';
 import {useMediaQuery as UMQ} from '@mui/material';
 import {useTheme} from '@mui/material';
@@ -31,7 +31,40 @@ const ICN = () => {
     return (currentIndex + offset + totalImages) % totalImages;
   };
 
-  return (
+  return (<>
+
+    <Box
+      sx={{
+        // my: 10,
+        // position: "relative",
+        // border: "3px  double black",
+
+      }}>
+      <Typography
+        variant="h4"
+        fontWeight="bold"
+        color="black"
+        sx={{
+          fontSize: { xs: "1.1rem", sm: "2.5rem" },
+          mt: 0,
+          pt: 8,
+          pb: 0,
+          // bgcolor: "#328E6E",
+          textAlign: "center",
+        }}
+      >
+        Image Carousel
+      </Typography>
+
+
+
+
+
+
+
+
+
+
     <Box sx={{ position: 'relative', width: '100%', overflow: 'hidden', p: 0 
     }}>
       <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', 
@@ -82,7 +115,9 @@ const ICN = () => {
         </IconButton>
       </Box>
     </Box>
-  );
+        </Box>
+    
+ </> );
 };
 
 export default ICN;

@@ -19,6 +19,41 @@ export default function ISMS() {
   const select = (index) => setCurrent(index);
 
   return (
+
+
+<Box
+        sx={{
+          // my: 10,
+          // position: "relative",
+          // border: "3px  double black",
+
+        }}>
+        <Typography
+          variant="h4"
+          fontWeight="bold"
+          color="black"
+          sx={{
+            fontSize: { xs: "1.1rem", sm: "2.5rem" },
+            mt: 0,
+            pt: 8,
+            pb: 0,
+            // bgcolor: "#328E6E",
+            textAlign: "center",
+          }}
+        >
+        Image Slideshow - Map Sidebar
+        </Typography>
+
+
+
+
+
+
+
+
+
+
+
     <Box
       sx={{
         display: 'flex',
@@ -162,6 +197,7 @@ export default function ISMS() {
           <Typography variant="body2" sx={{ mb: 2 }}>123 Sunset Blvd, Dream City, NY</Typography>
           <Button variant="contained" color="primary">See Location</Button>
         </Box>
+      </Box>
       </Box>
     </Box>
   );
