@@ -37,10 +37,13 @@ const ExJsHt=()=>{
 
       <Box
         sx={{
-          // my: 10,
-          // position: "relative",
-          // border: "3px  double black",
-
+          py: 0,
+          display: "flex",
+          justifySelf: "center", flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          width: "100%",
+          // border:"1px solid red",
         }}>
         <Typography
           variant="h4"

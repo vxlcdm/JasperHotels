@@ -33,10 +33,10 @@ const Footer = () => {
         <Box sx={{ display: "flex", gap: 5, justifyContent: "center", flexDirection: "column", alignItems:"center" }}>
          <Box sx={ {   display:"flex" ,   gap:0}}>
            <TextField variant="outlined" placeholder="Your Name" sx={{ background: "white", borderRadius: 1,  }} InputProps={{
-    sx: { paddingLeft: "100px", paddingY: "2px", fontSize:"1.2rem" } 
+    sx: { paddingLeft: "00px", paddingY: "2px", fontSize:"1.2rem" } 
   }} />
           <TextField variant="outlined" placeholder="Your Email" sx={{ background: "white", borderRadius: 1 }}  InputProps={{
-    sx: { paddingLeft: "100px", paddingY: "2px", fontSize:"1.2rem" } 
+    sx: { paddingLeft: "00px", paddingY: "2px", fontSize:"1.2rem" } 
   }}/>
          </Box>
           <Button variant="contained" sx={{ backgroundColor: "#FF5722", color: "white", width:"200px", py:"15px", letterSpacing:"2px",
